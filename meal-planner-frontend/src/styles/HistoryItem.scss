@@ -1,0 +1,98 @@
+.history-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .history-type {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      &.meal {
+        background-color: #e8f7f1;
+        color: #0b8f6f;
+      }
+
+      &.workout {
+        background-color: #eef3ff;
+        color: #3057d5;
+      }
+    }
+
+    .history-date {
+      font-size: 0.85rem;
+      color: #777;
+    }
+  }
+
+  .history-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .history-details {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+
+    .calories {
+      font-weight: 600;
+      color: #d35400;
+    }
+  }
+
+  .history-footer {
+    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+
+    .btn-view {
+      background-color: transparent;
+      color: #3498db;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #21618c;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .history-item {
+    padding: 12px;
+
+    .history-title {
+      font-size: 1rem;
+    }
+
+    .history-details {
+      font-size: 0.85rem;
+    }
+  }
+}

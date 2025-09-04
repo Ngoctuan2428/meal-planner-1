@@ -1,0 +1,7 @@
+@use "sass:color";
+$primary-color: #ffa500;
+$primary-hover: color.adjust($primary-color, $lightness: -10%);
+$border-radius: 12px;
+$input-border: #ccc;
+$error-color: red;
+$gray-bg: #f5f5f5;

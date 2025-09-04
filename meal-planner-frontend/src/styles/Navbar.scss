@@ -1,0 +1,141 @@
+.navbar {
+  width: 100%;
+  background-color: #1a1c1e;
+  padding: 12px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    .logo-icon {
+      font-size: 40px;
+      color: #f26d4b;
+    }
+
+    .logo-text {
+      font-family: 'Courier New', Courier, monospace;
+      color: #f26d4b;
+      margin-left: 4px;
+      font-weight: bold;
+      line-height: 1;
+      font-size: 25px;
+    }
+  }
+
+  /* Menu */
+  .navbar-menu {
+    display: flex;
+    gap: 40px;
+
+    a {
+      color: #f26d4b;
+      font-size: 23px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative; // để pseudo-element định vị được
+
+      &:hover {
+        color: white;
+      }
+
+    
+      &.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px; // cách chữ 5px
+        height: 3px;
+        background-color: #cb583c;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  /* Auth buttons + username */
+  .navbar-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Username */
+    .navbar-username {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .signup-button {
+      background-color: #f26d4b;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.25s ease;
+
+      &:hover {
+        background-color: #d9573b;
+      }
+    }
+
+    .signin-link {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #f26d4b;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .logout-button {
+      background-color: #d13c3c;
+      color: white;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.25s ease;
+
+      &:hover {
+        background-color: #b32e2e;
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .navbar-menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .navbar-auth {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
